@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YoComparto</title>
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+    
+  </head>
+  <body>
+    <!-- <nav>
+      <div class="nav-wrapper">
+        <div class="container">
+          <a href="#!" class="brand-logo">Logo</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="right hide-on-med-and-down">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="sass.html"><i class="material-icons">home</i>Sass</a></li>
+      <li><a href="badges.html">Components</a></li>
+      <li><a href="collapsible.html">Javascript</a></li>
+      <li><a href="mobile.html">Mobile</a></li>
+    </ul> -->
+
+    <!-- MENU -->
+
+    <header class="header">
+      <a href="#" class="header__logo">YoComparto</a>
+
+      <ion-icon
+        name="menu-outline"
+        class="header__toggle"
+        id="nav-toggle"
+      ></ion-icon>
+
+      <nav class="nav" id="nav-menu">
+        <div class="nav__content bd-grid">
+          <ion-icon
+            name="close-outline"
+            class="nav__close"
+            id="nav-close"
+          ></ion-icon>
+
+          <div class="nav__perfil">
+            <!-- <div class="nav__img">
+                      <img src="assets/img/perfil.png" alt="">
+                  </div> -->
+
+            <div>
+              <a href="#" class="nav__name">YoComparto</a>
+              <span class="nav__profesion">Web designer</span>
+            </div>
+          </div>
+
+          <div class="nav__menu">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#" id="inicio-id" class="nav__link active">Inicio</a>
+              </li>
+              <li class="nav__item">
+                <a href="#about" id="about-id" class="nav__link">¿Quienes Somos?</a>
+              </li>
+              <li class="nav__item"><a href="#faqs" id="faqs-id" class="nav__link">FAQs</a></li>
+              <li class="nav__item">
+                <a href="login/login.php" class="nav__link">Acceso</a>
+              </li>
+              <li class="nav__item">
+                <a onclick="scrollWin()" style="cursor: pointer;" id="contact-id" class="nav__link">Contacto</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- <div class="nav__social">
+                  <a href="#" class="nav__social-icon"><ion-icon name="logo-linkedin"></ion-icon></a>
+                  <a href="#" class="nav__social-icon"><ion-icon name="logo-github"></ion-icon></a>
+                  <a href="#" class="nav__social-icon"><ion-icon name="logo-behance"></ion-icon></a>
+              </div> -->
+        </div>
+      </nav>
+    </header>
+
+    <main ng-app="App">
+      <script type="text/ng-template" id="pages/establecimiento.html">
+        <div class="serie-pasos">
+          <article class="entrada">
+            <div class="contenido">
+              <img src="img/registrate-1.jpg" alt="paso 1">
+              <div class="numero-paso">1</div>
+            </div>
+              <h3>Regístrate como establecimiento</h3>
+          </article>
+
+          <article class="entrada">
+            <div class="contenido">
+              <img src="img/add-info.jpg" alt="paso 1">
+              <div class="numero-paso">2</div>
+            </div>
+              <h3>Registra los datos completos del establecimiento</h3>
+          </article>
+
+          <article class="entrada">
+            <div class="contenido">
+              <img src="img/publica.jpg" alt="paso 1">
+              <div class="numero-paso">3</div>
+            </div>
+              <h3>Haz una publicación proporcionando los datos del alimento que quieres donar</h3>
+          </article>
+
+          <article class="entrada">
+            <div class="contenido">
+              <img src="img/clock.jpg" alt="paso 1">
+              <div class="numero-paso">4</div>
+            </div>
+              <h3>Espera que alguna asociacion solicite tu donativo</h3>
+          </article>
+
+          <article class="entrada">
+            <div class="contenido">
+              <img src="img/donar.jpg" alt="paso 1">
+              <div class="numero-paso">5</div>
+            </div>
+              <h3>Entrega la donación</h3>
+          </article>
+
+          <!-- <article class="entrada">
+            <div class="contenido">
+              <img src="img/asociacon.jpg" alt="paso 1">
+              <div class="numero-paso">6</div>
+            </div>
+              <h3>Repite</h3>
+          </article> -->
+        </div>
+      </script>
+      <script type="text/ng-template" id="pages/asociacion.html">
+        <div class="serie-pasos">
+          <article class="entrada">
+            <div class="contenido">
+              <img src="img/registrate-1.jpg"alt="paso 1">
+              <div class="numero-paso">1</div>
+            </div>
+              <h3>Regístrate como Asociación</h3>
+          </article>
+
+          <article class="entrada">
+            <div class="contenido">
+              <img src="img/add-info.jpg" alt="paso 1">
+              <div class="numero-paso">2</div>
+            </div>
+              <h3>Registra los datos completos de la Asociación</h3>
+          </article>
+
+          <article class="entrada">
+            <div class="contenido">
+              <img src="img/select.jpg" alt="paso 1">
+              <div class="numero-paso">3</div>
+            </div>
+              <h3>Selecciona un donativo en el centro de donaciones</h3>
+          </article>
+
+          <article class="entrada">
+            <div class="contenido">
+              <img src="img/clock.jpg" alt="paso 1">
+              <div class="numero-paso">4</div>
+            </div>
+              <h3>Programa la recolección del donativo</h3>
+          </article>
+
+          <article class="entrada">
+            <div class="contenido">
+              <img src="img/donar.jpg" alt="paso 1">
+              <div class="numero-paso">5</div>
+            </div>
+              <h3>Recolección de donativo</h3>
+          </article>
+
+          <article class="entrada">
+            <div class="contenido">
+              <img src="img/asociacon.jpg" alt="paso 1">
+              <div class="numero-paso">6</div>
+            </div>
+              <h3>Válida el donativo recibido</h3>
+          </article>
+        </div>
+      </script>
+      <!-- HEADER -->
+    <section class="header-section">
+      <div class="background-overlay">
+        <div class="header-logan">
+          <h1>
+            Sábias que en México se desperdicias alrededor de 10 millones de
+            toneladas de alimento anualmente
+          </h1>
+          <div id="count"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps"></section>
+
+      
+    <section class="card-section">
+      <div class="title-card-section">
+        <h3>DONACIÓN</h3>
+      </div>
+      <section class="card-container">
+        <div class="card">
+          <div class="card__image">
+            <img src="img/restaurant.svg" alt="mountain" />
+          </div>
+          <div class="card__textContent">
+            <div class="card__title">
+              <div class="card__title-main">Establecimiento</div>
+              <div class="card__title-sub">Dona la comida, no la tires</div>
+            </div>
+            <div class="card__content">
+              <p>
+                Si quires donar alimentos por que eres restaurante, buffet, hotel, fonda
+                o simplemente quieres compartir alimentos a las personas que mas lo necesitan
+                registrate ahora mismo y has tu donación.
+              </p>
+            </div>
+            <div class="card__button button"> <a href="login/login.php">QUIERO DONAR</a> </div>
+          </div>
+        </div>
+  
+        <div class="card">
+          <div class="card__image">
+            <img src="img/asociacon.jpg" alt="mountain" />
+          </div>
+          <div class="card__textContent">
+            <div class="card__title">
+              <div class="card__title-main">Asociación</div>
+              <div class="card__title-sub">Recibe alimeto y distribuyelo</div>
+            </div>
+            <div class="card__content">
+              <p>
+                Si quieres recibir donaciónes porque eres Banco de alimentos,
+                Asociación civil, Albergue, Comedor comunitario, Fundación
+                registrate ahora mismo y entra al centro de donaciones.
+              </p>
+            </div>
+            <div class="card__button button"> <a href="login/login.php">quiero ser veneficiado</a> </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section class="pasos" ng-controller="EstablecimientoController">
+      <div class="title-pasos">
+        <h1>¿Cómo funciona?</h1>
+      </div>
+      <div class="type">
+        <a href="#/establecimiento" class="type-button" id="establecimiento">Establecimiento</a>
+        <a href="#/asociacion" class="type-button" id="asociacion">Asociación</a>
+      </div>
+      <div ng-view class="resume animated fadeIn"></div>
+
+    </section>
+    <section class="about" id="about">
+      <div class="title-about">
+        <h1>¿Quienes Somos?</h1>
+      </div>
+      <div class="text-about">
+        <p style="text-align: justify;"><span style="font-weight: bold;">YoComparto</span> es una aplicación desarrollada como parte del proyecto de investigación "<em>Propuesta de plataforma digital para la reducción de despredicio de alimentos en establecimientos</em>" con la finalidad de reducir el desperdicio de alimento y en su lugar donar ese alimento sobrante para que personas con escases alimentaria reciba ese donativo. </p>
+      </div>
+      <div class="logo-about">
+        <div class="entidad">
+          <div class="imagen-entidad">
+            <a href="https://www.itesa.edu.mx/">
+              <img src="img/logo-tec_original.png" alt="">
+            </a>
+          </div>
+          <div class="desc-entidad">
+            <h2>ITESA</h2>
+            <hr>
+            <p>Instituto Tecnologico Superior del oriente del estado de Hidalgo</p>
+          </div>
+        </div>
+
+        <div class="entidad">
+          <div class="imagen-entidad">
+            <img src="img/TecNM-logo.png" alt="">
+          </div>
+          <div class="desc-entidad">
+            <h2>TecNM</h2>
+            <hr>
+            <p>Tecnológico Nacional de México</p>
+          </div>
+        </div>
+
+        <div class="entidad">
+          <div class="imagen-entidad">
+            <a href="https://www.un.org/sustainabledevelopment/es/hunger/">
+              <img src="img/ods_2_12.PNG" alt="">
+            </a>
+          </div>
+          <div class="desc-entidad">
+            <h2>ODS 2 y 12</h2>
+            <hr>
+            <p>Objetivos de desarrollado sustentable de la ONU</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faqs" id="faqs">
+      <div class="container">
+ 
+        <h2>Preguntas frecuentes</h2>
+       
+        <div class="accordion">
+          <div class="accordion-item">
+            <a>¿Quiénes pueden recibir alimento?</a>
+            <div class="content">
+              <p>Los alimenos (donativos) son ofrecidos a las Asociaciones civiles registradas en la plataforma,
+                 para ello es importante que registremos los datos de la Asociación como: el CLUNI y RFC OSC
+                 para comprobar que realmente sea una asociacion.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>¿Quiénes donan alimento?</a>
+            <div class="content">
+              <p>Principalmente establecimientos donde exista el excedente de comida como restaurantes,
+                 buffets, Hoteles, Fondas, pero tambien son invitados circuitos comerciales como mercados
+                 y personas voluntarias que deseen donar algun alimento para cutribuir a la causa.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>¿Qué tipo de alimento puedo donar?</a>
+            <div class="content">
+              <p>Se recomienda donar alimento enlatado o bien embolsado como: arroz, frijoles, azucar, atún,
+                lentejas, fideos, carnes, frutas y verduras. Alimentos de este tipo son adecuados por su valor nutricional.
+                 
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>¿Cómo funciona el proceso de donatción?</a>
+            <div class="content">
+              <p>El establecimiento realiza una publicación acordando cantidad y fecha límite en que estara disponible
+                el donativo en la plataforma mientras alguna asociación se interese en solicitarlo, posteriormente la 
+                publicación sera visualizada por las asociaciones donde se reflejaran los datos antes mensionados, adicionalmente
+                se visualizaran datos como el nombre del establecimiento y dirección. Si la asociación esta interesada en
+                el donativo debera programar una fecha de recolección del alimento, donde proporcionara el nombre de la persona
+                encargada de recolectarlo, posteriormente se le notificara al establecimiento acerca de la asociación interesada, 
+                así como el nombre del recolector y fecha de recolección.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>¿Por qué los establecimientos donan alimentos?</a>
+            <div class="content">
+              <p>
+                <ol>
+                  <li>Excedentes de alimentos</li>
+                  <li>Producto próximos a vencer/corto vencimiento</li>
+                  <li>Paquete defectuoso</li>
+                  <li>Devoluciones de clientes</li>
+                  <li>Productos fuera de temporada</li>
+                  <li>Algunos donantes simplemente por caridad</li>
+                </ol>
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>¿Cuáles son los requisitos para que una organización social o asociación civil reciba alimentos?</a>
+            <div class="content">
+              <p>Estas deben dar de comer o bien distribuir el alimento donado a personas con necesidad alimentaria,
+                y que esten ubicadas en el radio de operación de almenos 3 establecimientos donantes o bien que esten
+                dispuestas a recorrer ciertas distancias por el donativo, además, debe contar con Clave Única de 
+                Inscripción (CLUNI).
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>¿Cómo me contacto con el establecimiento que solicite su donativo?</a>
+            <div class="content">
+              <p>Cuando programas la recoleta del donativo, los datos del establecimiento los podras
+                consultar en el apartado de programación donde se le informara sobre el donativo que 
+                solicito junto con la dirección, número, y el encargado del establecimiento, con la 
+                finalidad de que pueda recurrir al establecimiento por el donativo solicitado.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>¿Cómo se a que asociación le intereso mi donativo?</a>
+            <div class="content">
+              <p>Cuando su donativo sea solicitado por alguna organización se le informara 
+                en la página principal de su cuenta, donde se le mostrara un aviso con los datos
+                de la publicación del donativo que realizo junto con el nombre de la asociacion interesada,
+                el nombre de la persona quien recolectara la donación y la fecha de recolección.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>¿Cómo se entrega el donativo?</a>
+            <div class="content">
+              <p>Una persona integrante de la asociacion debera recurrir a la dirección del establecimiento
+                donde algun representante o integrante del establecimiento le hara entrega del donativo.
+                El establecimiento ya contara con el nombre de la pesona quien recolectara el alimento que sera
+                proporsionado por la asociación.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>¿Cómo puedo acceder a la plataforma?</a>
+            <div class="content">
+              <p>Primero deberas registrarte para ello solo necesitas una cuenta de correo electronico, deberas
+                agregar tu nombre completo, una contraseñas y finalmente seleccionar el rol que deseas tener, es
+                decir, si quieres donar o ser beneficiario.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+  
+    </section>       
+    </main>
+    <footer class="parallax">
+      <div class="contact">
+      <!-- <h1>Lorem ipsum dolor sit amet.</h1> -->
+        <div class="items">
+          <!-- <ul>
+            <li style="font-size: large;" id="sample" class="menu-footer"><a href="#">Inicio</a></li>
+            <li style="font-size: large;" class="menu-footer"><a href="#">¿Quienes somos?</a></li>
+            <li style="font-size: large;" class="menu-footer"><a href="#">FAQs</a></li>
+            <li style="font-size: large;" class="menu-footer"><a href="#">Acceso</a></li>
+          </ul> -->
+          <a href="#">Inicio</a>
+          <a href="#about">¿Quienes somos?</a>
+          <a href="#faqs">FAQs</a>
+          <a href="login/login.php">Acceso</a>
+            <!-- <li><a href="#"></a></li> -->
+        </div>
+        <div class="about-project">
+          <div class="this-project">
+            <p> <span>YoComparto</span> es una aplicación sin fines de lucro desarrollada dentro del 
+              proyecto "<em>Propuesta de plataforma digital para la reducción de despredicio de alimentos 
+              en establecimientos</em>" en el cual busca cuntribuir con los objetivos de desarrollo 
+              sustentable de la ONU <a href="https://www.un.org/sustainabledevelopment/es/hunger/">2</a> y
+              <a href="https://www.un.org/sustainabledevelopment/es/sustainable-consumption-production/">12</a>.</p>
+          </div>
+        </div>
+        <div class="creator">
+          <div class="firma"><a href="https://navaxa.github.io/Miguel-Nava/"><h1>MN</h1></a></div>
+          <p>Desarrollador de aplicación web</p>
+          <!-- <img src="img/logo_MN.PNG" alt=""> -->
+        </div>
+      </div>
+      <div class="footer">
+        <h3 id="firts-row"><span>Copyright © 2020 - All Rights Reserved</span> <a href="https://navaxa.github.io/Miguel-Nava/" target="_blank">Miguel Nava</a> </h3>
+        <!-- <h3 id="segunda-fila"><span>Copyright © 2020 - All Rights Reserved</span> <br>Miguel Angel Nava Zavala</h3> -->
+      </div>
+    </footer>
+
+    <!-- <div class="edn" style="height: 40vh;"></div> -->
+    <!-- <section class="steps" id="contact"></section> -->
+    
+    <script>
+      function scrollWin() {
+        window.scrollBy(0, 5000);
+      }
+    </script>
+    <script>
+      
+        
+    </script>
+
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- <script>
+      $(document).ready(function () {
+        $(".sidenav").sidenav();
+      }); -->
+    </script>
+  </body>
+</html>

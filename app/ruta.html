@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ruta</title>
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXRLDS8z_LKUh1ABHVDKNP01hD_GeXwAs&callback=initMap"
+    type="text/javascript"></script> -->
+    <script src="http://maps.googleapis.com/maps/api/js?v3"></script>
+  </head>
+  <body>
+    <div id="map" style="width: 100%; height: 90vh;"></div>
+    <script>
+      navigator.geolocation.getCurrentPosition(success, error);
+      var mapa = document.getElementById("map");
+
+      function success(res) {
+        var lat = res.coords.latitude;
+        var long = res.coords.longitude;
+        var gLatLon = new google.maps.LatLng(lat, long);
+        var objConfig = {
+            zoom: 17,
+            center: gLatLon
+        }
+        var gMap = new google.maps.Map(mapa, objConfig);
+        var objConfigMarker = {
+            position: gLatLon,
+            map: gMap,
+            title: "Actualmente se encuentra aquí"
+        }
+        var gMarker = new google.maps.Marker(objConfigMarker);
+        
+        // mapa.innerHTML = lat + "<br>" + long;
+      }
+
+      function error() {
+        mapa.innerHTML = "El usuario a denegado la ubicación";
+      }
+      //   mostrarObjecto(navigator.geolocation);
+      function mostrarObjecto(obj) {
+        for (var prop in obj) {
+          document.write(prop + ": " + obj[prop] + "<br>");
+        }
+
+      }
+    </script>
+    <script>
+      navigator.geolocation.getCurrentPosition(success, error);
+      var mapa = document.getElementById("map");
+
+      function success(res) {
+        var lat = res.coords.latitude;
+        var long = res.coords.longitude;
+        mapa.innerHTML = lat + "<br>" + long;
+      }
+
+      function error() {
+        mapa.innerHTML = "El usuario a denegado la ubicación";
+      }
+      //   mostrarObjecto(navigator.geolocation);
+      function mostrarObjecto(obj) {
+        for (var prop in obj) {
+          document.write(prop + ": " + obj[prop] + "<br>");
+        }
+      }
+    </script>
+    <script>
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(seccess, error, options);
+      } else {
+        alert("Ubicación fallida");
+      }
+
+      var options = {
+        EnableHighAccuracy: true,
+        Timeout: 500,
+        MaximunAge: 0,
+      };
+
+      function seccess(geolocationPosition) {
+        let coords = geolocationPosition.coords;
+        document.getElementById("map").innerHTML =
+          coords.latitude + "<br>" + coords.longitude;
+        console.log(geolocationPosition);
+        console.log(coords.latitude);
+        console.log(coords.longitude);
+      }
+
+      function error(err) {
+        console.log("Ubicación denegada por el usuario");
+        console.log(err);
+      }
+    </script>
+  </body>
+</html>
